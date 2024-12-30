@@ -3,6 +3,14 @@
 #include "helper/Untils.h"
 #include "helper/Macros.h"
 
+// pin setting for UNO SHIELD
+// pulsePin -> 27
+// inhibit, SSR relay -> 14,15,16
+// i2c -> 21,22
+// i2s -> 25,26,32
+// SDCARD SPI -> 5,18,19,23
+
+
 // ##### user settings #####
 #define MACHINE_SN "Srinagarind-001"
 #define MASSAGE_MODE 2 // mode: 0=นวดเร็วทั่วร่างกาย, 1=นวดสบาย, 2=นวดผ่อนคลาย, 3=นวดยึดตัว, 5=คอบ่าไหล่  14=ออฟฟิต
@@ -20,7 +28,7 @@ enum state
 state currentState;
 
 // set ICT NK77
-#define PULSE_PIN 39
+#define PULSE_PIN 27
 volatile int pulseCount = 0;
 volatile unsigned long firstPulseTime = 0;
 volatile unsigned long lastPulseTime = 0;
