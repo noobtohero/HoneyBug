@@ -6,6 +6,7 @@
 
 
 // ##### user settings #####
+#define VERSION_NO "60125.1"
 #define MACHINE_SN "Srinagarind-001"
 #define MASSAGE_MODE 2 // mode: 0=นวดเร็วทั่วร่างกาย, 1=นวดสบาย, 2=นวดผ่อนคลาย, 3=นวดยึดตัว, 5=คอบ่าไหล่  14=ออฟฟิต
 const char *WL_SSID = "Wiwamassage";
@@ -21,6 +22,7 @@ const char *WL_PASSWORD = "26462646";
 // do not use U2(Serial-1) RX,TX 
 
 // NK77 DIP SWITCH -> 0110100111
+// 2pulse:10bath
 
 #define PULSE_PIN 27
 #define SSR_PIN 14
@@ -210,15 +212,15 @@ void identifyBill()
   Serial.print(", diff times: ");
   Serial.println(diff);
 
-  if ((p >= 2 && p < 5) || (diff > 100 && diff <= 155))
+  if ((p >= 4 && p < 6) ) // || (diff > 100 && diff <= 155)
   {
     billValue = 20;
   }
-  else if ((p >= 5 && p < 10) || (diff > 155 && diff <= 610))
+  else if ((p >= 10 && p < 14) )// || (diff > 155 && diff <= 610)
   {
     billValue = 50;
   }
-  else if (p >= 10 && p < 50 || diff > 1300)
+  else if (p >= 20 && p < 24 ) // || diff > 1300
   {
     billValue = 100;
   }
