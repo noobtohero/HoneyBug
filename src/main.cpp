@@ -3,12 +3,6 @@
 #include "helper/Untils.h"
 #include "helper/Macros.h"
 
-// pin setting for UNO SHIELD
-// pulsePin -> 27
-// inhibit, SSR relay -> 14,15,16
-// i2c -> 21,22
-// i2s -> 25,26,32
-// SDCARD SPI -> 5,18,19,23
 
 
 // ##### user settings #####
@@ -17,6 +11,20 @@
 const char *WL_SSID = "Wiwamassage";
 const char *WL_PASSWORD = "26462646";
 // ##### end user settings #####
+
+// pin setting for UNO SHIELD
+// pulsePin -> 27
+// inhibit, SSR relay -> 14,15,16
+// i2c -> 21,22
+// i2s -> 25,26,32
+// SDCARD SPI -> 5,18,19,23
+// do not use U2(Serial-1) RX,TX 
+
+// NK77 DIP SWITCH -> 0110100111
+
+#define PULSE_PIN 27
+#define SSR_PIN 14
+#define INHIBIT_PIN 16
 
 enum state
 {
@@ -28,7 +36,7 @@ enum state
 state currentState;
 
 // set ICT NK77
-#define PULSE_PIN 27
+
 volatile int pulseCount = 0;
 volatile unsigned long firstPulseTime = 0;
 volatile unsigned long lastPulseTime = 0;
