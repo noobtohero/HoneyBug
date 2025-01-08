@@ -24,7 +24,7 @@ const char *WL_PASSWORD = "26462646";
 // NK77 DIP SWITCH -> 0110100111
 // 2pulse:10bath
 
-#define PULSE_PIN 27
+#define PULSE_PIN 39
 #define SSR_PIN 14
 #define INHIBIT_PIN 16
 
@@ -151,7 +151,8 @@ void loop()
         currentState = inProgram;
         break;
       case inProgram:
-
+        // แก้ปัญหา ssr ปิดตัว
+        setAcPower(true);
         break;
       }
     }
